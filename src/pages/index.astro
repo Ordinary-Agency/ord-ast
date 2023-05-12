@@ -1,36 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+const navigation = [
+  {
+    href:"https://docs.astro.build/",
+		title:"Documentation",
+    body:"Learn how Astro works and explore the official API docs.",
+  },
+  {
+    href:"https://astro.build/integrations/",
+		title:"Integrations",
+    body:"Supercharge your project with new frameworks and libraries.",
+  },
+]
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
+		<div class="instructions">
+      <p>
+        Based in Perth, WA, we offer bespoke solutions to help you achieve your business goals.
+      </p>
+      <p class="mt-1">
+        Whether you're looking to build your online presence, nurture customer relationships, or grow your revenue, 
+        we have the expertise to deliver tailored strategies that will drive results.
+      </p>
+    </div>
+    <ul role="list" class="link-card-grid">
+      {navigation.map( settings => <Card {...settings} /> )}
 		</ul>
 	</main>
 </Layout>
