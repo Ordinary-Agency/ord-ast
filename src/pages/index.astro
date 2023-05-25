@@ -61,29 +61,69 @@ const services = [
 </Layout>
 
 <style>
-  /* Existing Styles */
-  /* New or Updated Styles */
+  /* Updated styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
   .hero {
-    background-image: url('hero.jpg'); /* Replace with your hero image */
+    background-image: url('hero.jpg');
     background-size: cover;
     color: white;
     text-align: center;
     padding: 4rem 0;
+    background-position: center;
   }
   .hero-content h1 {
     font-size: 3em;
+    margin-bottom: 0.5em;
   }
   .hero-content p {
     font-size: 1.5em;
+    font-weight: 300;
+  }
+  main {
+    padding: 2em;
+    max-width: 80ch;
+    margin: auto;
+  }
+  .instructions {
+    background-color: #f9f9f9;
+    padding: 1.5em;
+    border-radius: 5px;
+    line-height: 1.6;
+    margin-bottom: 2em;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1em;
   }
   .service-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
   }
   .contact-us {
     text-align: center;
-    padding: 2rem 0;
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  .contact-us h2 {
+    margin-bottom: 1em;
+  }
+  .contact-us a {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  .contact-us a:hover {
+    background-color: #555;
   }
 </style>
