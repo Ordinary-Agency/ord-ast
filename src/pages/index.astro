@@ -1,78 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-const navigation = [
+
+const services = [
   {
-    href:"https://docs.astro.build/",
-		title:"Documentation",
-    body:"Learn how Astro works and explore the official API docs.",
+    href: "/services/seo",
+    title: "SEO Services",
+    body: "Boost your website's visibility and rank higher on search engine results.",
   },
   {
-    href:"https://astro.build/integrations/",
-		title:"Integrations",
-    body:"Supercharge your project with new frameworks and libraries.",
+    href: "/services/content-creation",
+    title: "Content Creation",
+    body: "Our team of expert writers and designers create engaging content to captivate your audience.",
+  },
+  {
+    href: "/services/social-media-management",
+    title: "Social Media Management",
+    body: "We'll manage your social media accounts, keeping your audience engaged and growing.",
+  },
+  {
+    href: "/services/web-design",
+    title: "Web Design & Development",
+    body: "Creating stunning and responsive websites that offer the best user experience.",
   },
 ]
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<div class="instructions">
+<Layout title="Your Company Name - Digital Solutions">
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Your Company Name</h1>
+      <p>Perth's leading digital solutions agency.</p>
+    </div>
+  </header>
+  
+  <main>
+    <div class="instructions">
       <p>
-        Based in Perth, WA, we offer bespoke solutions to help you achieve your business goals.
+        We offer bespoke digital solutions to help you achieve your business goals.
       </p>
       <p class="mt-1">
-        Whether you're looking to build your online presence, nurture customer relationships, or grow your revenue, 
+        Whether it's building your online presence, nurturing customer relationships, or growing your revenue, 
         we have the expertise to deliver tailored strategies that will drive results.
       </p>
     </div>
-    <ul role="list" class="link-card-grid">
-      {navigation.map( settings => <Card {...settings} /> )}
-		</ul>
-	</main>
+
+    <section>
+      <h2>Our Services</h2>
+      <ul role="list" class="service-card-grid">
+        {services.map( service => <Card {...service} /> )}
+      </ul>
+    </section>
+    
+    <section class="contact-us">
+      <h2>Contact Us</h2>
+      <p>Ready to take your business to the next level? <a href="/contact">Contact us</a> today.</p>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  /* Existing Styles */
+  /* New or Updated Styles */
+  .hero {
+    background-image: url('hero.jpg'); /* Replace with your hero image */
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+  }
+  .hero-content h1 {
+    font-size: 3em;
+  }
+  .hero-content p {
+    font-size: 1.5em;
+  }
+  .service-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+  .contact-us {
+    text-align: center;
+    padding: 2rem 0;
+  }
 </style>
